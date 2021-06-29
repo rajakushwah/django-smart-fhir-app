@@ -1,0 +1,53 @@
+<html lang="en">
+{% load static %}
+<head>
+    <link rel="shortcut icon" type="image/png" href="{% static 'app/favicon.ico' %}"/>
+    <title>Smart FHIR App</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row" style="margin-top:30px;">
+        <div class="col-xs-4">
+            <form action="/" method="POST" class="form-inline">{% csrf_token %}
+                <div class="form-group">
+                    <label style="font-size: 15px;">Enter Patient ID</label>
+                    <input type="text" class="form-control" placeholder="Search by id..." name="ID"
+                           style="margin-left:8px;width: 50%;">
+                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Resource Type</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Patient</td>
+            <td>123</td>
+            <td>male</td>
+            <td>Prince</td>
+        </tr>
+        </tbody>
+    </table>
+
+<!--<p>{{param}}</p>-->
+</body>
+
+
+
+</html>
